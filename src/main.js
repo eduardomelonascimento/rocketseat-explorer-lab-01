@@ -58,10 +58,6 @@ const cardNumberMasks = {
   mask: [
     {
       mask: "0000 0000 0000 0000",
-      cardType: "default",
-    },
-    {
-      mask: "0000 0000 0000 0000",
       regex: /^4\d{0,15}/,
       cardType: "visa",
     },
@@ -70,15 +66,18 @@ const cardNumberMasks = {
       regex: /(^5[1-5]\d{0,2}|^22[2-9]\d|^2[3-7]\d{0,2})\d{0,12}/,
       cardType: "mastercard",
     },
+    {
+      mask: "0000 0000 0000 0000",
+      cardType: "default",
+    },
   ],
-  dispatch: function (appendend, dinamicMasked) {
-    const number = (dinamicMasked.value + appendend).replace(/\D/, "");
+  dispatch(appendend, dinamicMasked) {
+    const cardNumber = (dinamicMasked.value + appendend).replace(/\D/g, "");
 
     const foundMask = dinamicMasked.compiledMasks.find(({ regex }) =>
-      number.match(regex)
+      cardNumber.match(regex)
     );
-
-    console.log(foundMask);
+    console.log(foundMask.cardType);
     return foundMask;
   },
 };
