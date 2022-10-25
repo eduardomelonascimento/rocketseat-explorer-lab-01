@@ -1,7 +1,8 @@
 <h1 align="center"> Explorer Lab #01 </h1>
 
 <p align="center">
-Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB.
+Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB. <br/>
+O código de cada aula está dividido por branches
 </p>
 
 <p align="center">
